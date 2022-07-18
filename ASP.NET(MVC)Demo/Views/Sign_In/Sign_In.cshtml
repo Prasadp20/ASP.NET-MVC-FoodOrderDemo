@@ -1,0 +1,33 @@
+﻿
+@{
+    ViewData["Title"] = "Sign_In";
+}
+
+<h1>Sign_In</h1>
+
+@using (Html.BeginForm()) { 
+
+<table class="table table-bordered table-hover">
+    <tr>
+        <td>@Html.Label("Enter User Name")</td>
+        <td>
+            @Html.TextBox("Username")
+        </td>
+    </tr>
+
+    <tr>
+        <td>@Html.Label("Enter Password")</td>
+        <td>
+            @Html.TextBox("Password")
+        </td>
+    </tr>
+
+    <tr>
+        <td></td>
+        <td>
+            <input type="submit" value="Login" class="btn btn-outline-primary"/>
+        </td>
+    </tr>
+</table>
+}
+

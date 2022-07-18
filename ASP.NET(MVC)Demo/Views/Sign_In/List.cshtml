@@ -1,0 +1,107 @@
+﻿
+@{
+    ViewData["Title"] = "List";
+}
+<style>
+    h1{
+        font-size:2.5rem;
+        color:darkred;
+    }
+    h2{
+    font-size : 2rem;
+    color :crimson;
+    }
+    table{
+        /*background-color:black;*/
+        font-size:medium   
+    }
+
+/* visited link */
+    table:visited {
+         color: green;
+    }
+
+/* mouse over link */
+    table:hover {
+         color: mediumvioletred;
+    }
+
+/* selected link */
+    table:active {
+         color: goldenrod;
+    }
+
+    th{
+        font-size:1.3rem;
+        color:darkblue;
+    }
+    td{
+        font-size:1.2rem;
+        font-weight:500;
+    }
+    body{
+        /*background-image: url("Views\Sign_In\food.jpg");*/
+
+    }
+</style>
+
+<h1>Menu Card</h1>
+
+<h2>Snaks</h2>
+@using (Html.BeginForm())
+{
+<table class="table table-bordered table-hover">
+    <tr>
+        <th>Sr.No.</th>
+        <th>Dishes</th>
+        <th>Price</th>
+        <th>Add to Cart</th>
+    </tr>
+    @foreach (MenuList list1 in ViewBag.SnaksList)
+   {
+       <tr>
+           <td>@list1.SrNo</td>
+           <td>@list1.fooditem</td>
+           <td>@list1.price</td>
+            <td>
+               <input type="checkbox" name="Snaks" value="@list1.fooditem"/>
+              @* <input type="checkbox" name="@list1.fooditem" value="Dhokla"/>*@
+           </td>
+       </tr>
+   }
+
+
+</table>
+<h2>Drinks</h2>
+<table class="table table-bordered table-hover">
+    <tr>
+        <th>Sr.No.</th>
+        <th>Dishes</th>
+        <th>Price</th>
+        <th>Add to Cart</th>
+    </tr>
+    @foreach (MenuList list2 in ViewBag.DrinksList)
+   {
+       <tr>
+           <td>@list2.SrNo</td>
+           <td>@list2.fooditem</td>
+           <td>@list2.price</td>
+           <td>
+               <input type="checkbox" name="Drinks" value="@list2.fooditem"/>
+           </td>
+       </tr>
+   }
+</table>
+
+@*<p>
+    @Html.ActionLink("Your Details", "OrderDetails", "Sign_In")
+   @Html.ActionLink("Text", "Action name", "Controller name")
+</p>*@
+
+    <tr>
+        <td></td>
+        <td>
+            <input type="submit" value="View Your Cart" class="btn btn-primary"/>
+        </td>
+    </tr>
+ }

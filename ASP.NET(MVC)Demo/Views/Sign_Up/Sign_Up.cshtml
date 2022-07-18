@@ -1,0 +1,46 @@
+﻿
+@{
+    ViewData["Title"] = "Sign_Up";
+}
+
+<h1>User Registration</h1> @*sigup*@
+
+@using (Html.BeginForm())
+{
+    <table class="table table-bordered table-hover">
+        <tr>
+            <td>@Html.Label("First Name")</td>
+            <td>
+                @Html.TextBox("first_name")
+            </td>
+        </tr>
+        <tr>
+            <td>@Html.Label("Last_Name")</td>
+            <td>
+                @Html.TextBox("last_name")
+            </td>
+        </tr>
+        <tr>
+            <td>@Html.Label("Username")</td>
+            <td>
+                @Html.TextBox("username")
+            </td>
+        </tr>
+        <tr>
+            <td>@Html.Label("Password")</td>
+            <td>
+                @Html.TextBox("password")
+            </td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>
+               <input type="submit" value="Submit" class="btn btn-outline-primary"/>
+            </td>
+        </tr>   
+    </table>
+}
+<p>
+    @Html.ActionLink("Already have an account", "Sign_In", "Sign_In")
+</p>
+

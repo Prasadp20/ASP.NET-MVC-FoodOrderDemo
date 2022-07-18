@@ -1,0 +1,41 @@
+﻿
+@{
+    ViewData["Title"] = "Display";
+}
+
+@*<h1>display</h1>*@
+
+<h1>Your Order Details</h1>
+
+<table class="table table-border table-hover">
+   @* <tr>
+        <td></td>
+    </tr>*@
+    <tr>
+        <td>
+            Snaks
+        </td>
+        <td>
+            @foreach (string s1 in ViewBag.fooditem1)
+            {
+                <p>
+                    @s1
+                </p>
+            }
+        </td>
+    </tr>
+    <tr>
+        <td>
+            Drinks
+        </td>
+        <td>
+            @foreach (string s2 in ViewBag.fooditem2)
+            {
+                <p>
+                    @s2
+                </p>
+            }
+        </td>
+    </tr>
+    
+</table>
